@@ -12,7 +12,7 @@ from Adafruit_IO import MQTTClient
 global run_count
 
 ADAFRUIT_IO_USERNAME = "ort22552"
-ADAFRUIT_IO_KEY      = "aio_gJZP04ZgZ0yTCverc8UFu9XMbRfN"
+ADAFRUIT_IO_KEY      = "aio_zxHU282u9B3DT6c5TwEagyoktBkK"
 
 # Set to the ID of the feed to subscribe to for updates.
 #feedContador = 'contador'
@@ -78,33 +78,45 @@ def prueba(Feed, pay):
             print("Posicion", fModo)
             #client.publish(feedPosicion, Posicion)
         case 'potbase':
-            if (int(pay)<100) & (pay[0] != '0'):
+            if (int(pay)<100) & (pay[0] != '0') & (len(pay)==2):
                 fPotB='0', pay[0], pay[1]
+                fPotB=''.join(fPotB)
+            elif (int(pay)<10)&(len(pay) == 1):
+                fPotB='0', '0', pay
                 fPotB=''.join(fPotB)
             else:
                 fPotB=pay
             print("Potb=", fPotB)
             #client.publish(feedPotB, Potb)
         case 'pot1':
-            if (int(pay)<100) & (pay[0] != '0'):
+            if (int(pay)<100) & (pay[0] != '0') & (len(pay)==2):
                 fPot1='0', pay[0], pay[1]
+                fPot1=''.join(fPot1)
+            elif (int(pay)<10)&(len(pay) == 1):
+                fPot1='0', '0', pay
                 fPot1=''.join(fPot1)
             else:
                 fPot1=pay
             print("Pot1=", fPot1)
             #client.publish(feedPot1, Pot1)
         case 'pot2':
-            if (int(pay)<100) & (pay[0] != '0'):
+            if (int(pay)<100) & (pay[0] != '0') & (len(pay)==2):
                 fPot2='0', pay[0], pay[1]
+                fPot2=''.join(fPot2)
+            elif (int(pay)<10)&(len(pay) == 1):
+                fPot2='0', '0', pay
                 fPot2=''.join(fPot2)
             else:
                 fPot2=pay
             print("Pot2=", fPot2)
             #client.publish(feedPot2, Pot2)
         case 'potgarra':
-            if (int(pay)<100) & (pay[0] != '0'):
+            if (int(pay)<100) & (pay[0] != '0') & (len(pay)==2):
                 fPotg='0', pay[0], pay[1]
                 fPotg=''.join(fPotg)
+            elif (int(pay)<10)&(len(pay) == 1):
+                fPotg='0', '0', pay
+                fPotg=''.join(fPotg) 
             else:
                 fPotg=pay
             print("Potg=", fPotg)
