@@ -142,8 +142,15 @@
     <Compile Include="Setups\SetupsMicro.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Utileria\Utileria.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Utileria\Utileria.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Utileria" />
     <Folder Include="Setups" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

@@ -157,6 +157,7 @@ void SetupEntrada(uint8_t PuertoEntrada, uint8_t PinEntrada){
 }
 
 void SetupSalida(uint8_t PuertoSalida ,uint8_t PinSalida){
+	UCSR0B = 0x00; 
 	if (PuertoSalida == Todo)
 	{
 		switch (PinSalida)
@@ -172,6 +173,7 @@ void SetupSalida(uint8_t PuertoSalida ,uint8_t PinSalida){
 			case D:
 			DDRD = 0xFF;
 			PORTD = 0;
+			 UCSR0B = 0x00; 
 			break;
 			default: break;
 		}
@@ -271,7 +273,8 @@ void SetupSalida(uint8_t PuertoSalida ,uint8_t PinSalida){
 			DDRD |= (1<<PD7);
 			PORTD &= ~(1<<PD7);
 			break;
-			default:break;
+			default:
+			break;
 		}
 	}
 }
